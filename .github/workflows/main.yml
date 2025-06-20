@@ -29,7 +29,7 @@ jobs:
 
       - name: Run M3U converter
         run: |
-          python m3u_converter/convert.py
+          python convert.py
 
       - name: Commit and push M3U
         run: |
