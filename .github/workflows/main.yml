@@ -2,7 +2,7 @@ name: Auto Update M3U
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # Runs every 6 hours
+    - cron: '0 */20 * * *'  # Runs every 20 hours
   workflow_dispatch:       # Allows manual triggering
 
 jobs:
@@ -26,6 +26,9 @@ jobs:
           git fetch upstream
           git merge upstream/main --allow-unrelated-histories -m "Merge upstream"
           git push
+
+      - name: Install dependencies
+        run: pip install requests
 
       - name: Run M3U converter
         run: |
