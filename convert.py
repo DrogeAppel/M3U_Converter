@@ -20,5 +20,5 @@ def json_to_m3u(json_file: str, output_file: str = "tv_garden_tr.m3u"):
     print(f"✅ M3U-bestand gegenereerd als: {output_file}")
 
 if __name__ == "__main__":
-    json_path = os.path.join("m3u_converter", "channels", "compressed", "countries", "tr.json")
+    json_path = os.path.join("channels", "compressed", "countries", "tr.json")
     json_to_m3u(json_path)
