@@ -1,8 +1,9 @@
 import json
+import gzip
 import os
 
 def json_to_m3u(json_file: str, output_file: str = "tv_garden_tr.m3u"):
-    with open(json_file, "r", encoding="utf-8") as f:
+    with gzip.open(json_file, "rt", encoding="utf-8") as f:
         channels = json.load(f)
 
     m3u_lines = ['#EXTM3U']
