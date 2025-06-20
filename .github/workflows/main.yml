@@ -1,0 +1,38 @@
+name: Auto Update M3U
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Runs every 6 hours
+  workflow_dispatch:       # Allows manual triggering
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout your fork
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Pull upstream changes
+        run: |
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git remote add upstream https://github.com/TVGarden/tv-garden-channel-list.git
+          git fetch upstream
+          git merge upstream/main --allow-unrelated-histories -m "Merge upstream"
+          git push
+
+      - name: Run M3U converter
+        run: |
+          python m3u_converter/convert.py
+
+      - name: Commit and push M3U
+        run: |
+          git add tv_garden_tr.m3u
+          git commit -m "🔁 Auto-update M3U from tr.json" || echo "No changes"
+          git push
