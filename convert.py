@@ -2,6 +2,7 @@ import requests
 
 TR_JSON_URL = "https://raw.githubusercontent.com/TVGarden/tv-garden-channel-list/main/channels/raw/countries/tr.json"
 IPTV_ORG_CHANNELS_URL = "https://iptv-org.github.io/api/channels.json"
+DEFAULT_LOGO = "https://i.imgur.com/3pODQO3.png"  # Default TV icon
 
 def json_to_m3u(output_file="tv_garden_tr.m3u"):
     print("📥 Downloading Turkish channel list...")
@@ -10,6 +11,9 @@ def json_to_m3u(output_file="tv_garden_tr.m3u"):
     print("📥 Downloading iptv-org metadata...")
     metadata = requests.get(IPTV_ORG_CHANNELS_URL).json()
     meta_map = {ch["id"]: ch for ch in metadata if ch.get("country") == "TR"}
+
+    # Create a name-based lookup for better matching
+    name_map = {ch["name"].lower(): ch for ch in metadata if ch.get("country") == "TR"}
 
     print("🧠 Merging and generating M3U...")
     m3u_lines = ["#EXTM3U"]
@@ -22,7 +26,19 @@ def json_to_m3u(output_file="tv_garden_tr.m3u"):
 
         # Match metadata by ID
         meta = meta_map.get(tvg_id, {})
-        logo = meta.get("logo", "")
+
+        # If no match by ID, try to match by name
+        if not meta and name.lower() in name_map:
+            meta = name_map[name.lower()]
+
+        # If still no match, try partial name matching
+        if not meta:
+            for meta_name, meta_ch in name_map.items():
+                if name.lower() in meta_name or meta_name in name.lower():
+                    meta = meta_ch
+                    break
+
+        logo = meta.get("logo", DEFAULT_LOGO)  # Use default logo if none found
         group = "Turkey"
 
         for url in urls:
@@ -43,6 +59,7 @@ def json_to_m3u(output_file="tv_garden_tr.m3u"):
         f.write("\n".join(m3u_lines))
 
     print(f"✅ M3U file generated: {output_file}")
+    print(f"📊 Total channels: {len(seen)}")
 
 if __name__ == "__main__":
     json_to_m3u()
