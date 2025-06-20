@@ -1,50 +1,48 @@
-import json
-import os
 import requests
 
-def json_to_m3u(json_file: str, output_file: str = "tv_garden_tr.m3u"):
-    # Load main Turkish channel list with URLs
-    with open(json_file, "r", encoding="utf-8") as f:
-        channels = json.load(f)
+TR_JSON_URL = "https://raw.githubusercontent.com/TVGarden/tv-garden-channel-list/main/channels/raw/countries/tr.json"
+IPTV_ORG_CHANNELS_URL = "https://iptv-org.github.io/api/channels.json"
 
-    # Fetch extra metadata from iptv-org API
-    print("🔗 Downloading metadata from iptv-org API...")
-    metadata = []
-    try:
-        res = requests.get("https://iptv-org.github.io/api/channels.json")
-        res.raise_for_status()
-        metadata = res.json()
-    except Exception as e:
-        print(f"⚠️ Failed to fetch iptv-org metadata: {e}")
+def json_to_m3u(output_file="tv_garden_tr.m3u"):
+    print("📥 Downloading Turkish channel list...")
+    tr_channels = requests.get(TR_JSON_URL).json()
 
-    # Build a map of channel ID → logo
-    logo_map = {
-        ch["id"]: ch.get("logo")
-        for ch in metadata
-        if ch.get("country") == "TR"
-    }
+    print("📥 Downloading iptv-org metadata...")
+    metadata = requests.get(IPTV_ORG_CHANNELS_URL).json()
+    meta_map = {ch["id"]: ch for ch in metadata if ch.get("country") == "TR"}
 
-    m3u_lines = ['#EXTM3U']
+    print("🧠 Merging and generating M3U...")
+    m3u_lines = ["#EXTM3U"]
+    seen = {}
 
-    for channel in channels:
-        name = channel.get("name", "Onbekend kanaal")
+    for channel in tr_channels:
+        name = channel.get("name", "Unknown")
         tvg_id = channel.get("id", name)
-        logo = logo_map.get(tvg_id, "")
+        urls = channel.get("iptv_urls", [])
+
+        # Match metadata by ID
+        meta = meta_map.get(tvg_id, {})
+        logo = meta.get("logo", "")
         group = "Turkey"
 
-        for url in channel.get("iptv_urls", []):
-            if url.endswith(".m3u8"):
-                m3u_lines.append(
-                    f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{group}",{name}'
-                )
-                m3u_lines.append(url)
+        for url in urls:
+            if not url.endswith(".m3u8"):
+                continue
 
-    # Write M3U file
+            key = f"{name}_{url}"
+            if key in seen:
+                continue  # Avoid exact duplicates
+
+            seen[key] = True
+            m3u_lines.append(
+                f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{group}",{name}'
+            )
+            m3u_lines.append(url)
+
     with open(output_file, "w", encoding="utf-8") as f:
-        f.write('\n'.join(m3u_lines))
+        f.write("\n".join(m3u_lines))
 
-    print(f"✅ M3U-bestand gegenereerd als: {output_file}")
+    print(f"✅ M3U file generated: {output_file}")
 
 if __name__ == "__main__":
-    json_path = os.path.join("channels", "raw", "countries", "tr.json")
-    json_to_m3u(json_path)
+    json_to_m3u()
