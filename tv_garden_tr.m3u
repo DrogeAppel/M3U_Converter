@@ -133,6 +133,8 @@ https://ca-rt.onetv.app/gemb/index-0.m3u8
 https://edge1.socialsmart.tv/goncatv/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="Grand Cinema" tvg-logo="https://www.lyngsat.com/logo/tv/gg/grand-cinema.png" group-title="Turkey",Grand Cinema
 https://gcinemahls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="GRT" tvg-logo="https://i.imgur.com/eRR0gkC.png" group-title="Turkey",GRT
+https://live.artidijitalmedya.com/artidijital_grt/grt1/playlist.m3u8
 #EXTINF:-1 tvg-id="GZT" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/GZT_logo.svg/320px-GZT_logo.svg.png" group-title="Turkey",GZT
 https://mn-nl.mncdn.com/gzttv/gzttv/playlist.m3u8
 #EXTINF:-1 tvg-id="Haber Global" tvg-logo="https://i.imgur.com/fu6XeGS.png" group-title="Turkey",Haber Global
@@ -183,6 +185,8 @@ https://live.artidijitalmedya.com/artidijital_kanalfirat/kanalfirat/playlist.m3u
 https://tbn02a.ltnschedule.com/hls/nx21i.m3u8
 #EXTINF:-1 tvg-id="Kanal S" tvg-logo="https://i.imgur.com/DN6gdg2.png" group-title="Turkey",Kanal S
 https://cdn-kanals.yayin.com.tr/kanals/kanals/playlist.m3u8
+#EXTINF:-1 tvg-id="Kanal Urfa" tvg-logo="https://i.imgur.com/EvgQmoT.png" group-title="Turkey",Kanal Urfa
+https://edge1.socialsmart.tv/kanalurfa/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="Kanal V" tvg-logo="https://i.imgur.com/7RNjTno.png" group-title="Turkey",Kanal V
 https://live.artidijitalmedya.com/artidijital_kanalv/kanalv/playlist.m3u8
 #EXTINF:-1 tvg-id="Kanal Z" tvg-logo="https://i.imgur.com/Kr8960d.png" group-title="Turkey",Kanal Z
@@ -195,10 +199,10 @@ https://live.artidijitalmedya.com/artidijital_kaytv/kaytv1/playlist.m3u8
 https://live.artidijitalmedya.com/artidijital_kaytv/kaytv/playlist.m3u8
 #EXTINF:-1 tvg-id="Kent Türk TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kent Türk TV
 https://live.artidijitalmedya.com/artidijital_kentturktv/kentturktv/playlist.m3u8
-#EXTINF:-1 tvg-id="Konya Olay TV" tvg-logo="https://www.konyaolaytv.com/upload/tema/20230307__5154687762.jpg" group-title="Turkey",Konya Olay TV
-https://live.artidijitalmedya.com/artidijital_konyaolaytv/konyaolaytv/playlist.m3u8
 #EXTINF:-1 tvg-id="KRAL Pop TV" tvg-logo="https://i.imgur.com/ch365lh.png" group-title="Turkey",KRAL Pop TV
 https://dogus-live.daioncdn.net/kralpoptv/playlist.m3u8
+#EXTINF:-1 tvg-id="Lalegul TV" tvg-logo="https://i.imgur.com/wwCysFs.png" group-title="Turkey",Lalegul TV
+https://lbl.netmedya.net/hls/lalegultv.m3u8
 #EXTINF:-1 tvg-id="Life TV" tvg-logo="https://i.imgur.com/lWeJxm0.png" group-title="Turkey",Life TV
 https://live.artidijitalmedya.com/artidijital_lifetv/lifetv/playlist.m3u8
 #EXTINF:-1 tvg-id="Line TV" tvg-logo="https://i.imgur.com/6GNp7f8.png" group-title="Turkey",Line TV
@@ -209,8 +213,8 @@ https://live.artidijitalmedya.com/artidijital_mavikaradeniz/mavikaradeniz/playli
 https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="Meltem TV" tvg-logo="https://i.imgur.com/C3m6w5S.png" group-title="Turkey",Meltem TV
 https://vhxyrsly.rocketcdn.com/meltemtv/playlist.m3u8
-#EXTINF:-1 tvg-id="Mercan TV" tvg-logo="https://i.imgur.com/3CWV8bS.png" group-title="Turkey",Mercan TV
-https://live.artidijitalmedya.com/artidijital_mercantv/mercantv/playlist.m3u8
+#EXTINF:-1 tvg-id="MTürk TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",MTürk TV
+https://edge1.socialsmart.tv/muglaturk/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="Natural TV" tvg-logo="https://i.imgur.com/rfcJ674.png" group-title="Turkey",Natural TV
 https://edge1.socialsmart.tv/naturaltv/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="NTV" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/NTV_%28Turkey%29_logo.svg/300px-NTV_%28Turkey%29_logo.svg.png" group-title="Turkey",NTV
@@ -257,6 +261,8 @@ https://ciner-live.daioncdn.net/showtv/showtv.m3u8
 https://live.sportstv.com.tr/hls/low/sportstv.m3u8
 #EXTINF:-1 tvg-id="Star TV" tvg-logo="https://i.imgur.com/9O3DHRB.png" group-title="Turkey",Star TV
 https://dogus-live.daioncdn.net/startv/startv.m3u8
+#EXTINF:-1 tvg-id="Star TV" tvg-logo="https://i.imgur.com/9O3DHRB.png" group-title="Turkey",Star TV
+https://live20.bozztv.com/gin-trn09/gin-startv/index.m3u8
 #EXTINF:-1 tvg-id="Sun RTV" tvg-logo="https://i.imgur.com/64tph9N.png" group-title="Turkey",Sun RTV
 https://live.artidijitalmedya.com/artidijital_sunrtv/sunrtv/playlist.m3u8
 #EXTINF:-1 tvg-id="Tarim TV" tvg-logo="https://i.imgur.com/q30sFms.png" group-title="Turkey",Tarim TV
