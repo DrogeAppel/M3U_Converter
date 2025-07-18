@@ -23,8 +23,6 @@ https://starmenajo.com/hls/almahriah/index.m3u8
 https://edge1.socialsmart.tv/altastv/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="Anadolu Net TV" tvg-logo="https://www.anadolunettv.com/d/r/logo.png" group-title="Turkey",Anadolu Net TV
 https://live.artidijitalmedya.com/artidijital_anadolunet/anadolunet/playlist.m3u8
-#EXTINF:-1 tvg-id="ATV" tvg-logo="https://i.imgur.com/HyVUwFC.png" group-title="Turkey",ATV
-https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv.m3u8
 #EXTINF:-1 tvg-id="Benguturk TV" tvg-logo="https://i.imgur.com/p3ON1oX.png" group-title="Turkey",Benguturk TV
 https://tv.ensonhaber.com/benguturk/benguturk.m3u8
 #EXTINF:-1 tvg-id="Bloomberg HT" tvg-logo="https://i.imgur.com/bmkXfIE.png" group-title="Turkey",Bloomberg HT
@@ -83,8 +81,6 @@ https://yayin30.haber100.com/live/finansturk/playlist.m3u8
 https://edge1.socialsmart.tv/ftvturk/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="GEM Pixel" tvg-logo="https://i.ibb.co/Q3tkbPrn/icon-27.png" group-title="Turkey",GEM Pixel
 https://glserver1.tamashaland.com/live/aBCH96886YznRbGOiqTnnQ__/stream_0.m3u8
-#EXTINF:-1 tvg-id="Gonca TV" tvg-logo="https://i.imgur.com/TwqIJwo.png" group-title="Turkey",Gonca TV
-https://edge1.socialsmart.tv/goncatv/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="Grand Cinema" tvg-logo="https://www.lyngsat.com/logo/tv/gg/grand-cinema.png" group-title="Turkey",Grand Cinema
 https://gcinemahls.wns.live/hls/stream.m3u8
 #EXTINF:-1 tvg-id="GRT" tvg-logo="https://i.imgur.com/eRR0gkC.png" group-title="Turkey",GRT
@@ -235,8 +231,6 @@ https://tele1-live.ercdn.net/tele1/tele1.m3u8
 https://live.artidijitalmedya.com/artidijital_tempotv/tempotv/playlist.m3u8
 #EXTINF:-1 tvg-id="Teve2" tvg-logo="https://i.imgur.com/rsoSLih.png" group-title="Turkey",Teve2
 https://demiroren-live.daioncdn.net/teve2/teve2.m3u8
-#EXTINF:-1 tvg-id="TGRT Belgesel TV" tvg-logo="https://i.imgur.com/eRR0gkC.png" group-title="Turkey",TGRT Belgesel TV
-https://b01c02nl.mediatriple.net/videoonlylive/mtsxxkzwwuqtglive/broadcast_5fe462afc6a0e.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="TGRT Haber" tvg-logo="https://i.imgur.com/PrxwKDw.png" group-title="Turkey",TGRT Haber
 https://canli.tgrthaber.com/tgrt.m3u8
 #EXTINF:-1 tvg-id="Tivi 6" tvg-logo="https://i.imgur.com/Mbi0jbz.png" group-title="Turkey",Tivi 6
