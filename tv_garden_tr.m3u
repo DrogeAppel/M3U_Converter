@@ -53,8 +53,6 @@ https://live.artidijitalmedya.com/artidijital_cine1/cine1/playlist.m3u8
 https://live.artidijitalmedya.com/artidijital_dehatv/dehatv/playlist.m3u8
 #EXTINF:-1 tvg-id="Deniz Postası TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Deniz Postası TV
 https://live.artidijitalmedya.com/artidijital_denizpostasi/denizpostasi/playlist.m3u8
-#EXTINF:-1 tvg-id="DHA" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",DHA
-https://603c568fccdf5.streamlock.net/live/dhaweb1_C5efC/playlist.m3u8
 #EXTINF:-1 tvg-id="DİM TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",DİM TV
 https://live.artidijitalmedya.com/artidijital_dimtv/dimtv/playlist.m3u8
 #EXTINF:-1 tvg-id="Diyanet TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Diyanet TV
@@ -109,8 +107,6 @@ https://edge1.socialsmart.tv/iceltv/bant1/playlist.m3u8
 https://live.artidijitalmedya.com/artidijital_kanal3/kanal3/playlist.m3u8
 #EXTINF:-1 tvg-id="Kanal 3" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal 3
 https://live.artidijitalmedya.com/artidijital_kanal3/kanal3guncel/playlist.m3u8
-#EXTINF:-1 tvg-id="Kanal 7 Avrupa" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal 7 Avrupa
-https://livetv.radyotvonline.net/kanal7live/kanal7avr/playlist.m3u8
 #EXTINF:-1 tvg-id="Kanal 12" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal 12
 https://live.artidijitalmedya.com/artidijital_kanal12/kanal12/playlist.m3u8
 #EXTINF:-1 tvg-id="Kanal 15" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal 15
@@ -119,8 +115,6 @@ https://live.artidijitalmedya.com/artidijital_kanal15/kanal15/playlist.m3u8
 https://live.artidijitalmedya.com/artidijital_kanal23/kanal23/playlist.m3u8
 #EXTINF:-1 tvg-id="Kanal 26" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal 26
 https://live.artidijitalmedya.com/artidijital_kanal26/kanal26/playlist.m3u8
-#EXTINF:-1 tvg-id="Kanal 32" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal 32
-https://edge1.socialsmart.tv/kanal32/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="Kanal 33" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal 33
 https://edge1.socialsmart.tv/kanal33/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="KANAL 58" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",KANAL 58
@@ -225,6 +219,8 @@ https://tele1-live.ercdn.net/tele1/tele1.m3u8
 https://live.artidijitalmedya.com/artidijital_tempotv/tempotv/playlist.m3u8
 #EXTINF:-1 tvg-id="Teve2" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Teve2
 https://demiroren-live.daioncdn.net/teve2/teve2.m3u8
+#EXTINF:-1 tvg-id="TGRT Belgesel TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TGRT Belgesel TV
+https://b01c02nl.mediatriple.net/videoonlylive/mtsxxkzwwuqtglive/broadcast_5fe462afc6a0e.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="TGRT Haber" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TGRT Haber
 https://canli.tgrthaber.com/tgrt.m3u8
 #EXTINF:-1 tvg-id="Tivi 6" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Tivi 6
