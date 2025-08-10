@@ -23,8 +23,6 @@ https://edge1.socialsmart.tv/altastv/bant1/playlist.m3u8
 https://live.artidijitalmedya.com/artidijital_anadolunet/anadolunet/playlist.m3u8
 #EXTINF:-1 tvg-id="ATV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",ATV
 https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv.m3u8
-#EXTINF:-1 tvg-id="ATV Avrupa" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",ATV Avrupa
-https://streamer2.nexgen.bz/ATV/index.m3u8
 #EXTINF:-1 tvg-id="Benguturk TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Benguturk TV
 https://tv.ensonhaber.com/benguturk/benguturk.m3u8
 #EXTINF:-1 tvg-id="Bloomberg HT" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Bloomberg HT
@@ -229,18 +227,24 @@ https://tele1-live.ercdn.net/tele1/tele1.m3u8
 https://live.artidijitalmedya.com/artidijital_tempotv/tempotv/playlist.m3u8
 #EXTINF:-1 tvg-id="Teve2" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Teve2
 https://demiroren-live.daioncdn.net/teve2/teve2.m3u8
+#EXTINF:-1 tvg-id="TGRT Belgesel TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TGRT Belgesel TV
+https://b01c02nl.mediatriple.net/videoonlylive/mtsxxkzwwuqtglive/broadcast_5fe462afc6a0e.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="TGRT Haber" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TGRT Haber
 https://canli.tgrthaber.com/tgrt.m3u8
 #EXTINF:-1 tvg-id="Tivi 6" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Tivi 6
 https://live.artidijitalmedya.com/artidijital_tivi6/tivi6/playlist.m3u8
 #EXTINF:-1 tvg-id="Ton TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Ton TV
 https://live.artidijitalmedya.com/artidijital_tontv/tontv/playlist.m3u8
+#EXTINF:-1 tvg-id="TRT 1" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TRT 1
+https://tv-trt1.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-id="TRT 2" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TRT 2
 https://tv-trt2.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-id="TRT Arabi" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TRT Arabi
 https://tv-trtarabi.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-id="TRT Avaz" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TRT Avaz
 https://tv-trtavaz.medya.trt.com.tr/master.m3u8
+#EXTINF:-1 tvg-id="TRT Belgesel" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TRT Belgesel
+https://tv-trtbelgesel.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-id="TRT Cocuk" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TRT Cocuk
 https://tv-trtcocuk.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-id="TRT Diyanet Çocuk" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TRT Diyanet Çocuk
