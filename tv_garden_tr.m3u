@@ -40,6 +40,8 @@ https://livetv.canbroadcast.com:7443/canlican/tv.m3u8
 #EXTINF:-1 tvg-id="Cay TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Cay TV
 https://edge1.socialsmart.tv/caytv/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="Cekmeköy TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Cekmeköy TV
+https://cdn-cekmekoybeltv.yayin.com.tr/cekmekoybeltv/cekmekoybeltv/playlist.m3u8
+#EXTINF:-1 tvg-id="Cekmeköy TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Cekmeköy TV
 https://cdn-cekmekoybeltv.yayin.com.tr/cekmekoybeltv/cekmekoybeltv_1080p/playlist.m3u8
 #EXTINF:-1 tvg-id="CGTN Documentary" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",CGTN Documentary
 https://mn-nl.mncdn.com/dogusdyg_drone/cgtn/playlist.m3u8
@@ -93,6 +95,10 @@ https://edge1.socialsmart.tv/gtv/bant1/playlist.m3u8
 https://mn-nl.mncdn.com/gzttv/gzttv/playlist.m3u8
 #EXTINF:-1 tvg-id="Haber Global" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Haber Global
 https://tv.ensonhaber.com/haberglobal/haberglobal.m3u8
+#EXTINF:-1 tvg-id="Haber61 TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Haber61 TV
+https://cdn-haber61tv.yayin.com.tr/haber61tv/smil:haber61tv.smil/index.m3u8
+#EXTINF:-1 tvg-id="Haber61 TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Haber61 TV
+https://win8.yayin.com.tr/haber61tv/smil:haber61tv.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="Habertürk TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Habertürk TV
 https://ciner-live.daioncdn.net/haberturktv/haberturktv.m3u8
 #EXTINF:-1 tvg-id="Habertürk TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Habertürk TV
@@ -143,6 +149,8 @@ https://edge1.socialsmart.tv/kardelentv/bant1/playlist.m3u8
 https://live.artidijitalmedya.com/artidijital_kaytv/kaytv1/playlist.m3u8
 #EXTINF:-1 tvg-id="Kay TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kay TV
 https://live.artidijitalmedya.com/artidijital_kaytv/kaytv/playlist.m3u8
+#EXTINF:-1 tvg-id="Kent Türk TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kent Türk TV
+https://live.artidijitalmedya.com/artidijital_kentturktv/kentturktv/playlist.m3u8
 #EXTINF:-1 tvg-id="Konya Olay TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Konya Olay TV
 https://live.artidijitalmedya.com/artidijital_konyaolaytv/konyaolaytv/playlist.m3u8
 #EXTINF:-1 tvg-id="KRAL Pop TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",KRAL Pop TV
@@ -223,6 +231,8 @@ https://tele1-live.ercdn.net/tele1/tele1.m3u8
 https://live.artidijitalmedya.com/artidijital_tempotv/tempotv/playlist.m3u8
 #EXTINF:-1 tvg-id="Teve2" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Teve2
 https://demiroren-live.daioncdn.net/teve2/teve2.m3u8
+#EXTINF:-1 tvg-id="TGRT Haber" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TGRT Haber
+https://canli.tgrthaber.com/tgrt.m3u8
 #EXTINF:-1 tvg-id="Tivi 6" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Tivi 6
 https://live.artidijitalmedya.com/artidijital_tivi6/tivi6/playlist.m3u8
 #EXTINF:-1 tvg-id="Ton TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Ton TV
