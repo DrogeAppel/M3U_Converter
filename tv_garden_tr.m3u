@@ -53,8 +53,6 @@ https://live.artidijitalmedya.com/artidijital_cine1/cine1/playlist.m3u8
 https://live.artidijitalmedya.com/artidijital_dehatv/dehatv/playlist.m3u8
 #EXTINF:-1 tvg-id="Deniz Postası TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Deniz Postası TV
 https://live.artidijitalmedya.com/artidijital_denizpostasi/denizpostasi/playlist.m3u8
-#EXTINF:-1 tvg-id="DHA" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",DHA
-https://603c568fccdf5.streamlock.net/live/dhaweb1_C5efC/playlist.m3u8
 #EXTINF:-1 tvg-id="DİM TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",DİM TV
 https://live.artidijitalmedya.com/artidijital_dimtv/dimtv/playlist.m3u8
 #EXTINF:-1 tvg-id="Diyanet TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Diyanet TV
@@ -119,14 +117,10 @@ https://livetv.radyotvonline.net/kanal7live/kanal7avr/playlist.m3u8
 https://live.artidijitalmedya.com/artidijital_kanal12/kanal12/playlist.m3u8
 #EXTINF:-1 tvg-id="Kanal 15" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal 15
 https://live.artidijitalmedya.com/artidijital_kanal15/kanal15/playlist.m3u8
-#EXTINF:-1 tvg-id="Kanal 23" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal 23
-https://live.artidijitalmedya.com/artidijital_kanal23/kanal23/playlist.m3u8
 #EXTINF:-1 tvg-id="Kanal 26" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal 26
 https://live.artidijitalmedya.com/artidijital_kanal26/kanal26/playlist.m3u8
 #EXTINF:-1 tvg-id="Kanal 32" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal 32
 https://edge1.socialsmart.tv/kanal32/bant1/playlist.m3u8
-#EXTINF:-1 tvg-id="Kanal 33" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal 33
-https://edge1.socialsmart.tv/kanal33/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="KANAL 58" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",KANAL 58
 https://live.artidijitalmedya.com/artidijital_kanal58/kanal58/playlist.m3u8
 #EXTINF:-1 tvg-id="Kanal D" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal D
@@ -189,10 +183,6 @@ https://live.artidijitalmedya.com/artidijital_olayturk/olayturk/playlist.m3u8
 https://live.artidijitalmedya.com/artidijital_kanal16/kanal16/playlist.m3u8
 #EXTINF:-1 tvg-id="On4 TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",On4 TV
 https://edge1.socialsmart.tv/on4/bant1/playlist.m3u8
-#EXTINF:-1 tvg-id="Öncü TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Öncü TV
-https://edge1.socialsmart.tv/oncurtv/bant1/playlist.m3u8
-#EXTINF:-1 tvg-id="Power Dance" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Power Dance
-https://livetv.powerapp.com.tr/dance/dance.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="Power Love" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Power Love
 https://livetv.powerapp.com.tr/plove/love.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="Power Turk" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Power Turk
@@ -209,6 +199,8 @@ https://livetv.powerapp.com.tr/pturktaptaze/taptaze.smil/playlist.m3u8
 https://livetv.powerapp.com.tr/powerTV/powerhd.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="Power TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Power TV
 https://live.artidijitalmedya.com/artidijital_powertv/powertv/playlist.m3u8
+#EXTINF:-1 tvg-id="Qaf TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Qaf TV
+https://customer-9vqui33qma2rownb.cloudflarestream.com/7792e558fe54e23bdd4b462ec275cdba/manifest/video.m3u8
 #EXTINF:-1 tvg-id="Semerkand TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Semerkand TV
 https://b01c02nl.mediatriple.net/videoonlylive/mtisvwurbfcyslive/broadcast_58d915bd40efc.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="Show TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Show TV
@@ -221,8 +213,6 @@ https://dogus-live.daioncdn.net/startv/startv.m3u8
 https://live.artidijitalmedya.com/artidijital_sunrtv/sunrtv/playlist.m3u8
 #EXTINF:-1 tvg-id="Tarim TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Tarim TV
 https://content.tvkur.com/l/c7e1da7mm25p552d9u9g/master.m3u8
-#EXTINF:-1 tvg-id="Tatlises TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Tatlises TV
-https://live.artidijitalmedya.com/artidijital_tatlisestv/tatlisestv/playlist.m3u8
 #EXTINF:-1 tvg-id="TBMM TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TBMM TV
 https://meclistv-live.ercdn.net/meclistv/meclistv.m3u8
 #EXTINF:-1 tvg-id="Tele 1" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Tele 1
@@ -231,18 +221,18 @@ https://tele1-live.ercdn.net/tele1/tele1.m3u8
 https://live.artidijitalmedya.com/artidijital_tempotv/tempotv/playlist.m3u8
 #EXTINF:-1 tvg-id="Teve2" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Teve2
 https://demiroren-live.daioncdn.net/teve2/teve2.m3u8
-#EXTINF:-1 tvg-id="TGRT Belgesel TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TGRT Belgesel TV
-https://b01c02nl.mediatriple.net/videoonlylive/mtsxxkzwwuqtglive/broadcast_5fe462afc6a0e.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="TGRT Haber" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TGRT Haber
 https://canli.tgrthaber.com/tgrt.m3u8
 #EXTINF:-1 tvg-id="Tivi 6" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Tivi 6
 https://live.artidijitalmedya.com/artidijital_tivi6/tivi6/playlist.m3u8
+#EXTINF:-1 tvg-id="TJK TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TJK TV
+https://tjktv-live.tjk.org/tjktv.m3u8
+#EXTINF:-1 tvg-id="TJK TV 2" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TJK TV 2
+https://tjktv-live.tjk.org/tjktv2/tjktv2.m3u8
 #EXTINF:-1 tvg-id="Ton TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Ton TV
 https://live.artidijitalmedya.com/artidijital_tontv/tontv/playlist.m3u8
 #EXTINF:-1 tvg-id="TRT 1" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TRT 1
 https://tv-trt1.medya.trt.com.tr/master.m3u8
-#EXTINF:-1 tvg-id="TRT 2" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TRT 2
-https://tv-trt2.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-id="TRT Arabi" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TRT Arabi
 https://tv-trtarabi.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-id="TRT Avaz" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TRT Avaz
