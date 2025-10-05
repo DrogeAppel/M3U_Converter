@@ -113,8 +113,6 @@ https://live.artidijitalmedya.com/artidijital_kanal15/kanal15/playlist.m3u8
 https://live.artidijitalmedya.com/artidijital_kanal23/kanal23/playlist.m3u8
 #EXTINF:-1 tvg-id="Kanal 26" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal 26
 https://live.artidijitalmedya.com/artidijital_kanal26/kanal26/playlist.m3u8
-#EXTINF:-1 tvg-id="Kanal 32" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal 32
-https://edge1.socialsmart.tv/kanal32/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="Kanal 33" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal 33
 https://edge1.socialsmart.tv/kanal33/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="KANAL 58" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",KANAL 58
@@ -123,6 +121,8 @@ https://live.artidijitalmedya.com/artidijital_kanal58/kanal58/playlist.m3u8
 https://live.artidijitalmedya.com/artidijital_kanalfirat/kanalfirat/playlist.m3u8
 #EXTINF:-1 tvg-id="Kanal Hayat" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal Hayat
 https://tbn02a.ltnschedule.com/hls/nx21i.m3u8
+#EXTINF:-1 tvg-id="Kanal Urfa" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal Urfa
+https://edge1.socialsmart.tv/kanalurfa/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="Kanal V" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal V
 https://live.artidijitalmedya.com/artidijital_kanalv/kanalv/playlist.m3u8
 #EXTINF:-1 tvg-id="Kanal Z" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal Z
@@ -133,8 +133,6 @@ https://edge1.socialsmart.tv/kardelentv/bant1/playlist.m3u8
 https://live.artidijitalmedya.com/artidijital_kaytv/kaytv1/playlist.m3u8
 #EXTINF:-1 tvg-id="Kay TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kay TV
 https://live.artidijitalmedya.com/artidijital_kaytv/kaytv/playlist.m3u8
-#EXTINF:-1 tvg-id="Kent Türk TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kent Türk TV
-https://live.artidijitalmedya.com/artidijital_kentturktv/kentturktv/playlist.m3u8
 #EXTINF:-1 tvg-id="Konya Olay TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Konya Olay TV
 https://live.artidijitalmedya.com/artidijital_konyaolaytv/konyaolaytv/playlist.m3u8
 #EXTINF:-1 tvg-id="KRAL Pop TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",KRAL Pop TV
@@ -155,8 +153,6 @@ https://vhxyrsly.rocketcdn.com/meltemtv/playlist.m3u8
 https://live.artidijitalmedya.com/artidijital_mercantv/mercantv/playlist.m3u8
 #EXTINF:-1 tvg-id="Milyon TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Milyon TV
 https://sosyoapp-live.cdnnew.com/sosyo/buraya-bir-isim-verin.m3u8
-#EXTINF:-1 tvg-id="MTürk TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",MTürk TV
-https://edge1.socialsmart.tv/muglaturk/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="Natural TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Natural TV
 https://edge1.socialsmart.tv/naturaltv/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="NTV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",NTV
@@ -271,8 +267,6 @@ https://turkmedya-live.ercdn.net/tv4/tv4.m3u8
 https://mn-nl.mncdn.com/tvnet/tvnet/playlist.m3u8
 #EXTINF:-1 tvg-id="TYT Turk" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TYT Turk
 https://cdn-tytturk.yayin.com.tr/tytturk/index.m3u8
-#EXTINF:-1 tvg-id="Urfa Natik TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Urfa Natik TV
-https://live.artidijitalmedya.com/artidijital_urfanatiktv/urfanatiktv/playlist.m3u8
 #EXTINF:-1 tvg-id="Vav TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Vav TV
 https://playlist.fasttvcdn.com/pl/rfrk9821hdy9dayo8wfyha/kltr-sanat-tv/playlist.m3u8
 #EXTINF:-1 tvg-id="Vuslat TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Vuslat TV
