@@ -27,8 +27,6 @@ https://streamer2.nexgen.bz/ATV/index.m3u8
 https://tv.ensonhaber.com/benguturk/benguturk.m3u8
 #EXTINF:-1 tvg-id="Bloomberg HT" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Bloomberg HT
 https://tv.ensonhaber.com/bloomberght/bloomberght.m3u8
-#EXTINF:-1 tvg-id="BRTV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",BRTV
-https://live.artidijitalmedya.com/artidijital_brtv/brtv/playlist.m3u8
 #EXTINF:-1 tvg-id="Bursa AS TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Bursa AS TV
 https://live.artidijitalmedya.com/artidijital_astv/astv/playlist.m3u8
 #EXTINF:-1 tvg-id="Can TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Can TV
@@ -105,6 +103,8 @@ https://live.artidijitalmedya.com/artidijital_kanal15/kanal15/playlist.m3u8
 https://live.artidijitalmedya.com/artidijital_kanal23/kanal23/playlist.m3u8
 #EXTINF:-1 tvg-id="Kanal 26" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal 26
 https://live.artidijitalmedya.com/artidijital_kanal26/kanal26/playlist.m3u8
+#EXTINF:-1 tvg-id="Kanal 32" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal 32
+https://edge1.socialsmart.tv/kanal32/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="Kanal 33" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Kanal 33
 https://edge1.socialsmart.tv/kanal33/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="KANAL 58" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",KANAL 58
