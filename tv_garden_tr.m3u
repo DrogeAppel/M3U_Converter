@@ -11,8 +11,6 @@ https://turkmedya-live.ercdn.net/tv360/tv360.m3u8
 https://edge.socialsmart.tv/naturaltv/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="Akit TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Akit TV
 https://akittv-live.ercdn.net/akittv/akittv.m3u8
-#EXTINF:-1 tvg-id="Aksu TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Aksu TV
-https://live.artidijitalmedya.com/artidijital_aksutv/aksutv/playlist.m3u8
 #EXTINF:-1 tvg-id="Alanya Posta TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Alanya Posta TV
 https://api-tv3.yayin.com.tr/postatv/postatv/playlist.m3u8
 #EXTINF:-1 tvg-id="Almahriah TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Almahriah TV
@@ -21,8 +19,6 @@ https://starmenajo.com/hls/almahriah/index.m3u8
 https://edge1.socialsmart.tv/altastv/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="Anadolu Net TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Anadolu Net TV
 https://live.artidijitalmedya.com/artidijital_anadolunet/anadolunet/playlist.m3u8
-#EXTINF:-1 tvg-id="ATV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",ATV
-https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_360p.m3u8
 #EXTINF:-1 tvg-id="ATV Avrupa" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",ATV Avrupa
 https://streamer2.nexgen.bz/ATV/index.m3u8
 #EXTINF:-1 tvg-id="Benguturk TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Benguturk TV
@@ -141,8 +137,6 @@ https://edge1.socialsmart.tv/linetv/bant1/playlist.m3u8
 https://live.artidijitalmedya.com/artidijital_mavikaradeniz/mavikaradeniz/playlist.m3u8
 #EXTINF:-1 tvg-id="Mekameleen TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Mekameleen TV
 https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="Meltem TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Meltem TV
-https://vhxyrsly.rocketcdn.com/meltemtv/playlist.m3u8
 #EXTINF:-1 tvg-id="Mercan TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",Mercan TV
 https://live.artidijitalmedya.com/artidijital_mercantv/mercantv/playlist.m3u8
 #EXTINF:-1 tvg-id="MTürk TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",MTürk TV
@@ -241,8 +235,6 @@ https://edge1.socialsmart.tv/turkhaber/bant1/playlist.m3u8
 https://edge1.socialsmart.tv/tv1/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="TV 41" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TV 41
 https://live.artidijitalmedya.com/artidijital_tv41/tv41/playlist.m3u8
-#EXTINF:-1 tvg-id="TV 52" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TV 52
-https://edge1.socialsmart.tv/tv52/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="TV 100" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TV 100
 https://tv100-live.daioncdn.net/tv100/tv100.m3u8
 #EXTINF:-1 tvg-id="TV 264" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TV 264
