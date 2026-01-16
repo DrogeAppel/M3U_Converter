@@ -1,12 +1,21 @@
 import requests
 
-TR_JSON_URL = "https://raw.githubusercontent.com/TVGarden/tv-garden-channel-list/main/channels/raw/countries/tr.json"
+TR_JSON_URL = "https://github.com/famelack/famelack-channels/blob/main/channels/raw/countries/tr.json"
 IPTV_ORG_CHANNELS_URL = "https://iptv-org.github.io/api/channels.json"
 DEFAULT_LOGO = "https://i.imgur.com/3pODQO3.png"  # Default TV icon
 
+
 def json_to_m3u(output_file="tv_garden_tr.m3u"):
     print("📥 Downloading Turkish channel list...")
-    tr_channels = requests.get(TR_JSON_URL).json()
+    response = requests.get(TR_JSON_URL)
+
+    # Check if the request was successful
+    if response.status_code != 200:
+        print(f"❌ Error: Could not download file. Status Code: {response.status_code}")
+        print(f"   URL: {TR_JSON_URL}")
+        return  # Stop execution here
+
+    tr_channels = response.json()
 
     print("📥 Downloading iptv-org metadata...")
     metadata = requests.get(IPTV_ORG_CHANNELS_URL).json()
