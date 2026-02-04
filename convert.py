@@ -3,11 +3,14 @@ import requests
 TR_JSON_URL = "https://raw.githubusercontent.com/famelack/famelack-channels/main/channels/raw/countries/tr.json"
 IPTV_ORG_CHANNELS_URL = "https://iptv-org.github.io/api/channels.json"
 DEFAULT_LOGO = "https://i.imgur.com/3pODQO3.png"  # Default TV icon
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+}
 
 
 def json_to_m3u(output_file="tv_garden_tr.m3u"):
     print("📥 Downloading Turkish channel list...")
-    response = requests.get(TR_JSON_URL)
+    response = requests.get(TR_JSON_URL, headers=HEADERS)
 
     # Check if the request was successful
     if response.status_code != 200:
@@ -15,10 +18,24 @@ def json_to_m3u(output_file="tv_garden_tr.m3u"):
         print(f"   URL: {TR_JSON_URL}")
         return  # Stop execution here
 
-    tr_channels = response.json()
+    try:
+        tr_channels = response.json()
+    except Exception as e:
+        print(f"❌ Error: Failed to decode JSON from {TR_JSON_URL}")
+        print(f"   Exception: {e}")
+        print(f"   Response Preview (first 500 chars):")
+        print(response.text[:500])
+        return
 
     print("📥 Downloading iptv-org metadata...")
-    metadata = requests.get(IPTV_ORG_CHANNELS_URL).json()
+    try:
+        metadata_response = requests.get(IPTV_ORG_CHANNELS_URL, headers=HEADERS)
+        metadata_response.raise_for_status()
+        metadata = metadata_response.json()
+    except Exception as e:
+        print(f"❌ Error: Failed to download or decode metadata from {IPTV_ORG_CHANNELS_URL}")
+        print(f"   Exception: {e}")
+        return
     meta_map = {ch["id"]: ch for ch in metadata if ch.get("country") == "TR"}
 
     # Create a name-based lookup for better matching
