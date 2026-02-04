@@ -1,5 +1,5 @@
 import requests
-from streamlink_helper import get_stream_url
+from streamlink_helper import get_stream_url, get_stream_url_playwright
 
 TR_JSON_URL = "https://raw.githubusercontent.com/famelack/famelack-channels/main/channels/raw/countries/tr.json"
 IPTV_ORG_CHANNELS_URL = "https://iptv-org.github.io/api/channels.json"
@@ -58,6 +58,12 @@ def json_to_m3u(output_file="tv_garden_tr.m3u"):
     for live in live_channels:
         print(f"🔗 Fetching live stream for {live['name']}...")
         s_url = get_stream_url(live['url'])
+        
+        # Fallback naar Playwright als Streamlink faalt (voor Star TV en ATV)
+        if not s_url:
+            print(f"🔄 Streamlink failed for {live['name']}, trying Playwright...")
+            s_url = get_stream_url_playwright(live['url'])
+
         if s_url:
             # Match metadata for logo
             meta = meta_map.get(live['id'], {})
