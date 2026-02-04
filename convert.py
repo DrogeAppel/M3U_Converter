@@ -52,14 +52,20 @@ def json_to_m3u(output_file="tv_garden_tr.m3u"):
         {"name": "Show TV", "url": "https://www.showtv.com.tr/canli-yayin", "id": "ShowTV.tr"},
         {"name": "ATV", "url": "https://www.atv.com.tr/canli-yayin", "id": "ATV.tr"},
         {"name": "Kanal D", "url": "https://www.kanald.com.tr/canli-yayin", "id": "KanalD.tr"},
-        {"name": "Star TV", "url": "https://www.startv.com.tr/canli-yayin", "id": "StarTV.tr"}
+        {"name": "Star TV", "url": "https://www.startv.com.tr/canli-yayin", "id": "StarTV.tr"},
+        {"name": "NOW", "url": "https://www.nowtv.com.tr/canli-yayin", "id": "FoxTurkey.tr"},
+        {"name": "TRT 1", "url": "https://www.trtizle.com/canli/tv/trt-1", "id": "TRT1.tr"},
+        {"name": "TRT Haber", "url": "https://www.trtizle.com/canli/tv/trt-haber", "id": "TRTHaber.tr"},
+        {"name": "TRT Spor", "url": "https://www.trtizle.com/canli/tv/trt-spor", "id": "TRTSpor.tr"},
+        {"name": "HaberTürk", "url": "https://www.haberturk.com/canli-yayin", "id": "Haberturk.tr"},
+        {"name": "NTV", "url": "https://www.ntv.com.tr/canli-yayin", "id": "NTV.tr"}
     ]
 
     for live in live_channels:
         print(f"🔗 Fetching live stream for {live['name']}...")
         s_url = get_stream_url(live['url'])
         
-        # Fallback naar Playwright als Streamlink faalt (voor Star TV en ATV)
+        # Fallback to Playwright if Streamlink fails
         if not s_url:
             print(f"🔄 Streamlink failed for {live['name']}, trying Playwright...")
             s_url = get_stream_url_playwright(live['url'])

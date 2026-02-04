@@ -23,10 +23,15 @@ def get_stream_url_playwright(url, wait_time=15):
 
     def handle_request(request):
         u = request.url
-        if ".m3u8" in u.lower() and "master" in u.lower(): # Vaak is master degene die we willen
-            captured_urls.append(u)
-        elif ".m3u8" in u.lower() and u not in captured_urls:
-            captured_urls.append(u)
+        if ".m3u8" in u.lower():
+            # Check for keywords that indicate it's a stream playlist and not just an ad
+            # Common patterns: master.m3u8, playlist.m3u8, index.m3u8, chunklist, etc.
+            # Also check if it's from a known CDN or has 'live' in it
+            keywords = ["master", "playlist", "chunklist", "live", "stream"]
+            if any(k in u.lower() for k in keywords) and u not in captured_urls:
+                captured_urls.append(u)
+            elif u not in captured_urls:
+                captured_urls.append(u)
 
     try:
         with sync_playwright() as p:
@@ -41,21 +46,35 @@ def get_stream_url_playwright(url, wait_time=15):
             page.on("request", handle_request)
             
             print(f"🌐 [Playwright] Loading {url}...")
-            page.goto(url, wait_until="networkidle", timeout=60000)
-            
-            # Wacht even voor de player om te initialiseren en requests te doen
-            time.sleep(wait_time)
-            
-            # Probeer op een play knop te klikken als die er is (vaak nodig voor sommige zenders)
             try:
-                # Zoek naar algemene play knoppen
-                play_buttons = page.query_selector_all("button")
-                for btn in play_buttons:
-                    if btn.is_visible():
-                        btn.click()
-                        time.sleep(2)
-            except:
-                pass
+                # We wachten niet meer op 'networkidle' omdat dat vaak timeouts geeft op GitHub
+                page.goto(url, wait_until="domcontentloaded", timeout=45000)
+            except Exception as e:
+                print(f"⚠️ [Playwright] Goto warning for {url}: {e} (continuing anyway)")
+
+            # Wacht even voor de player om te initialiseren en requests te doen
+            # We loopen en checken of we al een URL hebben om sneller klaar te zijn
+            start_time = time.time()
+            while time.time() - start_time < wait_time:
+                if captured_urls:
+                    # Als we al een master playlist hebben, kunnen we mogelijk eerder stoppen
+                    if any("master" in u.lower() for u in captured_urls):
+                        print(f"✅ [Playwright] Master stream found after {int(time.time() - start_time)}s")
+                        break
+                time.sleep(1)
+            
+            # Probeer op een play knop te klikken als we nog niks hebben
+            if not captured_urls:
+                try:
+                    # Zoek naar algemene play knoppen
+                    play_buttons = page.query_selector_all("button")
+                    for btn in play_buttons:
+                        if btn.is_visible():
+                            btn.click()
+                            time.sleep(2)
+                            if captured_urls: break
+                except:
+                    pass
 
             browser.close()
     except Exception as e:
