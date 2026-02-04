@@ -1,6 +1,6 @@
 import requests
 
-TR_JSON_URL = "https://github.com/famelack/famelack-channels/blob/main/channels/raw/countries/tr.json"
+TR_JSON_URL = "https://raw.githubusercontent.com/famelack/famelack-channels/main/channels/raw/countries/tr.json"
 IPTV_ORG_CHANNELS_URL = "https://iptv-org.github.io/api/channels.json"
 DEFAULT_LOGO = "https://i.imgur.com/3pODQO3.png"  # Default TV icon
 
