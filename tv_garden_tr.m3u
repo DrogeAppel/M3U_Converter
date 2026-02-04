@@ -1,12 +1,22 @@
 #EXTM3U
 #EXTINF:-1 tvg-id="TV8.tr" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey (Live)",TV8
-https://tv8.daioncdn.net/tv8/tv8_1080p.m3u8?&sid=852wax6stt3o&app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3
+https://tv8.daioncdn.net/tv8/tv8_1080p.m3u8?&sid=852x6whesi9o&app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3
 #EXTINF:-1 tvg-id="ShowTV.tr" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey (Live)",Show TV
-https://ciner.daioncdn.net/showtv/showtv_1080p.m3u8?ex=1664766175&st=RBzhSuGauna0OGld-DJUVA&tv=1&sid=852wazswaq4d&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&ce=3
+https://ciner.daioncdn.net/showtv/showtv_1080p.m3u8?ex=1664766175&st=RBzhSuGauna0OGld-DJUVA&tv=1&sid=852x6y4lbagj&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&ce=3
 #EXTINF:-1 tvg-id="ATV.tr" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey (Live)",ATV
-https://trkvz-live.ercdn.net/atvhd/atvhd_1080p.m3u8?st=VcFyCoCJIIXMvBx-unGuaA&e=1770287116
+https://trkvz-live.ercdn.net/atvhd/atvhd_1080p.m3u8?st=ajKWyWv7P73Dbfr8I4OlrA&e=1770287712
 #EXTINF:-1 tvg-id="KanalD.tr" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey (Live)",Kanal D
-https://demiroren.daioncdn.net/kanald/kanald_1080p.m3u8?&sid=852wb7ot28pf&app=da2109ea-5dfe-4107-89ab-23593336ed61&ce=3
+https://demiroren.daioncdn.net/kanald/kanald_1080p.m3u8?&sid=852x73urh3zb&app=da2109ea-5dfe-4107-89ab-23593336ed61&ce=3
+#EXTINF:-1 tvg-id="StarTV.tr" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey (Live)",Star TV
+https://dogus.daioncdn.net/startv/startv.m3u8?ce=3&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ppid=76dd8f9a33153901594715120a69aa1d&gdpr=1&gdpr_consent=CQfGXgAQfGXgAAcABBTRCQFgAAAAAEPgAChQAAAX3ABMNCogjLIgQCBQMIIEACgrCACgQBAAAkDRAQAmDAhyBgAusJkAIAUAAwQAgABBgACAAASABCIAIACAQAgQCBQABgAQBAQAMDAAGACxEAgABAdAxTAggECwASMyqDTAlAASCAlsqEEoGBBXCEIs8AggREwUAAAIABQAAADwWAhJICViQQBcQTQAAEAAAUQIkCKQswBBUGaLQVgScBkaYBg-YJklOgyAJghIyDIhN-Ew8UhRAghyA2KWYA6eIKAEAAAA.YAAACHwAAAAA&dfp_paln=AQzzBGQEEjWSnR0XHUPwwJAiNPnhqeH62wEoarYCPjUh5YDUcLEvq34i93wnVUsf5uaPPc6lS3Z2oSJ7bcDlOS_2r0uFVdoYPa1tsVqc8ll6z8-eT-bwp0v6je5TAY8EG_zEnZtr99j1v1nc9nWebNDbrE-CWqB-c9bmZA-sDW0uVQNIJjepuZvYBNJgt4PDlIbcmL80RqPZIyB-Mkz82rhaIXRlMipDt_ct5wPJSMUC_5GcYbBnJPnSTo-60exaX72nOd6BPWcrCBWPvmrncaPdRQRo3KmsIJJ26KSfAoi0PsGTXmQC-95EwxXu_LbE0s6DdebxGXOKm1UItK7y-XtGe0akR5PYpPcz4tpG_R5ui-sNupn0m4IsNWQJUQwxdfmtAydOKCzBhuu_iXrGOlIncphgdseztgA9y2stBzf4zGWG3owWiqYxkj-lhIN6kMw_XSNmaPFHX8T2AH7K3wc2t0ksPhxjV8REeuT4t1ByqIzYwtzZ60tcsFSGKVLzWa5qIzmKLigs5zb_m6OZ7siWRNGnfo3ERFV5Edju2WOtTJoWKwZmfT2wO2koIT3e2AKhq8viOpW9Utgzr_k1BXD1C4klgG9LzUZzWFaQUZQYoeTTrDwnjflCpLiKDeY69Lf0DnTM9AG6CQuPUbUNAVdiKLPisvQZztpxRfhQhDYaSsRQZgSMno54Vngap7R9AsVKCNpoXObIHTGoZNC2QgXckTS8F0042DAIWQKCdFJg7YrebwmSKv5S6GVE5N0aRkTQJesMwBbTj6w9QihKJthJ1J5ZJoMZrA-fDtT45vQA7rLF-3kd2MhhoFOTfPDj4L0-fqa9Dpvu_b6-ctwlcIoQcNkQtbQj7bEJtLWn-tZpizi6iEf_SMAH8_hANgnT-KM6u41fZi5nEzzPTeA0ondUjr46u1Z6y1IsVTZbTfu08WwtbJyJBB1pE7nvb4teK690IdVud7Y42uAte9X7aBLj_V8pCQrJYC5HJOTNthokqo943jpNZkTp8cMP_Iq4vbZVOvEDb1-v_TnKFFWFZuOoF6j5jrcHbMUTBVHR3-VMyS6nubCUvnDhQ1gjHq4fCuPureCJ
+#EXTINF:-1 tvg-id="FoxTurkey.tr" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey (Live)",NOW
+https://nowtv-live-ad.ercdn.net/nowtv/nowtv_720p.m3u8?e=1770299940&st=ZtQNSVE-dWjQlM717CfW4Q
+#EXTINF:-1 tvg-id="TRT1.tr" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey (Live)",TRT 1
+https://trt.daioncdn.net/trt-1/master.m3u8?app=web
+#EXTINF:-1 tvg-id="TRTHaber.tr" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey (Live)",TRT Haber
+https://tv-trthaber.medya.trt.com.tr/master.m3u8
+#EXTINF:-1 tvg-id="TRTSpor.tr" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey (Live)",TRT Spor
+https://trt.daioncdn.net/trtspor/master.m3u8?app=web
 #EXTINF:-1 tvg-id="4U TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",4U TV
 https://hls.4utv.live/hls/stream.m3u8
 #EXTINF:-1 tvg-id="24 TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",24 TV
@@ -197,8 +207,6 @@ https://tv-trtcocuk.medya.trt.com.tr/master.m3u8
 https://tv-trtdiyanetcocuk.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-id="TRT EBA Ortaokul" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TRT EBA Ortaokul
 https://tv-e-okul01.medya.trt.com.tr/master.m3u8
-#EXTINF:-1 tvg-id="TRT Haber" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TRT Haber
-https://tv-trthaber.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-id="TRT Kurdî" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TRT Kurdî
 https://tv-trtkurdi.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-id="TRT Müzik" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",TRT Müzik
