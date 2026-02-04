@@ -7,6 +7,26 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 }
 
+# Manual channel overrides/additions
+MANUAL_CHANNELS = [
+    {
+        "name": "TV8",
+        "id": "TV8.tr",
+        "logo": "https://i.ibb.co/X7P4Z4Y/tv8.png",
+        "iptv_urls": [
+            "https://tv8-live.ercdn.net/tv8/tv8.m3u8"
+        ]
+    },
+    {
+        "name": "Show TV",
+        "id": "ShowTV.tr",
+        "logo": "https://i.ibb.co/YyY1q6X/showtv.png",
+        "iptv_urls": [
+            "https://ciner-live.ercdn.net/showtv/showtv.m3u8"
+        ]
+    }
+]
+
 
 def json_to_m3u(output_file="tv_garden_tr.m3u"):
     print("📥 Downloading Turkish channel list...")
@@ -45,7 +65,10 @@ def json_to_m3u(output_file="tv_garden_tr.m3u"):
     m3u_lines = ["#EXTM3U"]
     seen = {}
 
-    for channel in tr_channels:
+    # Combine remote channels with manual ones
+    combined_channels = MANUAL_CHANNELS + tr_channels
+
+    for channel in combined_channels:
         name = channel.get("name", "Unknown")
         tvg_id = channel.get("id", name)
         urls = channel.get("iptv_urls", [])
@@ -64,8 +87,9 @@ def json_to_m3u(output_file="tv_garden_tr.m3u"):
                     meta = meta_ch
                     break
 
-        logo = meta.get("logo", DEFAULT_LOGO)  # Use default logo if none found
-        group = "Turkey"
+        # Override metadata with manual values if available
+        logo = channel.get("logo") or meta.get("logo", DEFAULT_LOGO)
+        group = channel.get("group", "Turkey")
 
         for url in urls:
             if not url.endswith(".m3u8"):
