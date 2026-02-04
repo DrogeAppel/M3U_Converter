@@ -1,8 +1,10 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="TV8.tr" tvg-logo="https://i.ibb.co/X7P4Z4Y/tv8.png" group-title="Turkey",TV8
-https://tv8-live.ercdn.net/tv8/tv8.m3u8
-#EXTINF:-1 tvg-id="ShowTV.tr" tvg-logo="https://i.ibb.co/YyY1q6X/showtv.png" group-title="Turkey",Show TV
-https://ciner-live.ercdn.net/showtv/showtv.m3u8
+#EXTINF:-1 tvg-id="TV8.tr" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey (Live)",TV8
+https://tv8.daioncdn.net/tv8/tv8_1080p.m3u8?&sid=852sk9ub6jn4&app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3
+#EXTINF:-1 tvg-id="ShowTV.tr" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey (Live)",Show TV
+https://ciner.daioncdn.net/showtv/showtv_1080p.m3u8?ex=1664766175&st=RBzhSuGauna0OGld-DJUVA&tv=1&sid=852skbx83r4n&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&ce=3
+#EXTINF:-1 tvg-id="KanalD.tr" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey (Live)",Kanal D
+https://demiroren.daioncdn.net/kanald/kanald_1080p.m3u8?&sid=852skit00afd&app=da2109ea-5dfe-4107-89ab-23593336ed61&ce=3
 #EXTINF:-1 tvg-id="4U TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",4U TV
 https://hls.4utv.live/hls/stream.m3u8
 #EXTINF:-1 tvg-id="24 TV" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey",24 TV

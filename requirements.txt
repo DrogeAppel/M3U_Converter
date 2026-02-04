@@ -1,1 +1,2 @@
 requests
+streamlink==8.1.2

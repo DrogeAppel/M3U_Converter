@@ -1,4 +1,5 @@
 import requests
+from streamlink_helper import get_stream_url
 
 TR_JSON_URL = "https://raw.githubusercontent.com/famelack/famelack-channels/main/channels/raw/countries/tr.json"
 IPTV_ORG_CHANNELS_URL = "https://iptv-org.github.io/api/channels.json"
@@ -6,26 +7,6 @@ DEFAULT_LOGO = "https://i.imgur.com/3pODQO3.png"  # Default TV icon
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 }
-
-# Manual channel overrides/additions
-MANUAL_CHANNELS = [
-    {
-        "name": "TV8",
-        "id": "TV8.tr",
-        "logo": "https://i.ibb.co/X7P4Z4Y/tv8.png",
-        "iptv_urls": [
-            "https://tv8-live.ercdn.net/tv8/tv8.m3u8"
-        ]
-    },
-    {
-        "name": "Show TV",
-        "id": "ShowTV.tr",
-        "logo": "https://i.ibb.co/YyY1q6X/showtv.png",
-        "iptv_urls": [
-            "https://ciner-live.ercdn.net/showtv/showtv.m3u8"
-        ]
-    }
-]
 
 
 def json_to_m3u(output_file="tv_garden_tr.m3u"):
@@ -65,10 +46,32 @@ def json_to_m3u(output_file="tv_garden_tr.m3u"):
     m3u_lines = ["#EXTM3U"]
     seen = {}
 
-    # Combine remote channels with manual ones
-    combined_channels = MANUAL_CHANNELS + tr_channels
+    # Add streamlink based live channels
+    live_channels = [
+        {"name": "TV8", "url": "https://www.tv8.com.tr/canli-yayin", "id": "TV8.tr"},
+        {"name": "Show TV", "url": "https://www.showtv.com.tr/canli-yayin", "id": "ShowTV.tr"},
+        {"name": "ATV", "url": "https://www.atv.com.tr/canli-yayin", "id": "ATV.tr"},
+        {"name": "Kanal D", "url": "https://www.kanald.com.tr/canli-yayin", "id": "KanalD.tr"},
+        {"name": "Star TV", "url": "https://www.startv.com.tr/canli-yayin", "id": "StarTV.tr"}
+    ]
 
-    for channel in combined_channels:
+    for live in live_channels:
+        print(f"🔗 Fetching live stream for {live['name']}...")
+        s_url = get_stream_url(live['url'])
+        if s_url:
+            # Match metadata for logo
+            meta = meta_map.get(live['id'], {})
+            if not meta and live['name'].lower() in name_map:
+                meta = name_map[live['name'].lower()]
+            
+            logo = meta.get("logo", DEFAULT_LOGO)
+            group = "Turkey (Live)"
+            
+            m3u_lines.append(f'#EXTINF:-1 tvg-id="{live["id"]}" tvg-logo="{logo}" group-title="{group}",{live["name"]}')
+            m3u_lines.append(s_url)
+            seen[f"{live['name']}_{s_url}"] = True
+
+    for channel in tr_channels:
         name = channel.get("name", "Unknown")
         tvg_id = channel.get("id", name)
         urls = channel.get("iptv_urls", [])
@@ -87,9 +90,8 @@ def json_to_m3u(output_file="tv_garden_tr.m3u"):
                     meta = meta_ch
                     break
 
-        # Override metadata with manual values if available
-        logo = channel.get("logo") or meta.get("logo", DEFAULT_LOGO)
-        group = channel.get("group", "Turkey")
+        logo = meta.get("logo", DEFAULT_LOGO)  # Use default logo if none found
+        group = "Turkey"
 
         for url in urls:
             if not url.endswith(".m3u8"):
