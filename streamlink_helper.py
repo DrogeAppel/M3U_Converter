@@ -53,7 +53,6 @@ async def get_stream_url_playwright(url, wait_time=8):
             page = await context.new_page()
             
             # Blokkeer afbeeldingen en andere onnodige bronnen om laden te versnellen
-            # Ook ads en analytics blokkeren kan helpen
             await page.route("**/*", handle_route)
             
             page.on("request", handle_request)
@@ -91,6 +90,10 @@ async def get_stream_url_playwright(url, wait_time=8):
                 except:
                     pass
 
+            # Cleanup: remove listeners and routes before closing
+            page.remove_listener("request", handle_request)
+            await page.unroute("**/*", handle_route)
+            
             await browser.close()
     except Exception as e:
         print(f"❌ [Playwright] Error for {url}: {e}")
@@ -177,7 +180,11 @@ async def get_stream_url_combined(url):
         # Cancel the other tasks if one succeeded
         for p in pending:
             p.cancel()
-        # We can wait briefly for cancellation to take effect or just return
+        
+        # Wait briefly for cancellations to finish to avoid "Task was destroyed but it is pending"
+        if pending:
+            await asyncio.gather(*pending, return_exceptions=True)
+            
         return success_result
             
     # If the first one finished but returned None, wait for the others
