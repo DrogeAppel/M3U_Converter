@@ -14,6 +14,7 @@ USER_AGENTS = [
     "Mozilla/5.0 (iPhone; CPU iPhone OS 17_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Mobile/15E148 Safari/604.1"
 ]
 
+
 async def get_stream_url_playwright(url, wait_time=8):
     """
     Haalt de m3u8 URL op door de pagina te laden met Playwright en network requests te inspecteren.
@@ -41,6 +42,10 @@ async def get_stream_url_playwright(url, wait_time=8):
             elif u not in captured_urls:
                 captured_urls.append(u)
 
+    browser = None
+    context = None
+    page = None
+
     try:
         async with async_playwright() as p:
             browser = await p.chromium.launch(headless=True)
@@ -51,12 +56,12 @@ async def get_stream_url_playwright(url, wait_time=8):
                 timezone_id="Europe/Istanbul"
             )
             page = await context.new_page()
-            
+
             # Blokkeer afbeeldingen en andere onnodige bronnen om laden te versnellen
             await page.route("**/*", handle_route)
-            
+
             page.on("request", handle_request)
-            
+
             print(f"🌐 [Playwright] Loading {url}...")
             try:
                 # 'commit' is de allersnelste wacht-optie in Playwright (zodra de response ontvangen is)
@@ -70,14 +75,15 @@ async def get_stream_url_playwright(url, wait_time=8):
                 if captured_urls:
                     # Als we al een master playlist hebben, kunnen we direct stoppen
                     if any("master" in u.lower() for u in captured_urls):
-                        print(f"✅ [Playwright] Master stream found after {int(asyncio.get_event_loop().time() - start_time)}s")
+                        print(
+                            f"✅ [Playwright] Master stream found after {int(asyncio.get_event_loop().time() - start_time)}s")
                         break
                     # Als we tenminste één m3u8 hebben en al 5 seconden hebben gewacht, is het waarschijnlijk de goede
                     if asyncio.get_event_loop().time() - start_time > 5:
                         print(f"✅ [Playwright] Stream found after {int(asyncio.get_event_loop().time() - start_time)}s")
                         break
                 await asyncio.sleep(1)
-            
+
             # Probeer op een play knop te klikken als we nog niks hebben
             if not captured_urls:
                 try:
@@ -90,11 +96,30 @@ async def get_stream_url_playwright(url, wait_time=8):
                 except:
                     pass
 
-            # Cleanup: remove listeners and routes before closing
-            page.remove_listener("request", handle_request)
-            await page.unroute("**/*", handle_route)
-            
-            await browser.close()
+            # Proper cleanup sequence
+            if page:
+                page.remove_listener("request", handle_request)
+                try:
+                    await page.unroute("**/*")
+                except Exception:
+                    pass
+                try:
+                    await page.close()
+                except Exception:
+                    pass
+
+            if context:
+                try:
+                    await context.close()
+                except Exception:
+                    pass
+
+            if browser:
+                try:
+                    await browser.close()
+                except Exception:
+                    pass
+
     except Exception as e:
         print(f"❌ [Playwright] Error for {url}: {e}")
 
@@ -103,8 +128,9 @@ async def get_stream_url_playwright(url, wait_time=8):
             if "master" in u.lower():
                 return u
         return captured_urls[0]
-    
+
     return None
+
 
 def _get_streamlink_url_sync(url, retries=3, delay=2):
     """
@@ -115,36 +141,38 @@ def _get_streamlink_url_sync(url, retries=3, delay=2):
         try:
             ua_index = (attempt - 1) % len(USER_AGENTS)
             user_agent = USER_AGENTS[ua_index]
-            
+
             session = streamlink.Streamlink()
             session.set_option("http-headers", {
                 "User-Agent": user_agent,
                 "Referer": url
             })
-            
+
             streams = session.streams(url)
             if streams:
                 best_stream = streams.get('best')
                 if best_stream:
                     print(f"🔗 Found stream for {url} (Attempt {attempt} with UA index {ua_index})")
                     return best_stream.url
-            
+
             print(f"⚠️ No stream found for {url} (Attempt {attempt}/{retries})")
-            
+
         except Exception as e:
             print(f"❌ Error fetching stream for {url} (Attempt {attempt}/{retries}): {e}")
-        
+
         if attempt < retries:
             import time
             time.sleep(delay)
-            
+
     return None
+
 
 async def get_stream_url(url, retries=3, delay=2):
     """
     Asynchronous wrapper for streamlink.
     """
     return await asyncio.to_thread(_get_streamlink_url_sync, url, retries, delay)
+
 
 async def get_stream_url_combined(url):
     """
@@ -158,13 +186,13 @@ async def get_stream_url_combined(url):
         asyncio.create_task(get_stream_url(url)),
         asyncio.create_task(get_stream_url_playwright(url))
     ]
-    
+
     # We want the first one that returns a valid URL
     # But get_stream_url might return None if it fails.
     # We'll wait for them to finish and take the first non-None result.
-    
+
     done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
-    
+
     # Check the result of the completed task(s)
     success_result = None
     for task in done:
@@ -180,13 +208,13 @@ async def get_stream_url_combined(url):
         # Cancel the other tasks if one succeeded
         for p in pending:
             p.cancel()
-        
+
         # Wait briefly for cancellations to finish to avoid "Task was destroyed but it is pending"
         if pending:
             await asyncio.gather(*pending, return_exceptions=True)
-            
+
         return success_result
-            
+
     # If the first one finished but returned None, wait for the others
     if pending:
         done2, pending2 = await asyncio.wait(pending, return_when=asyncio.ALL_COMPLETED)
@@ -197,5 +225,5 @@ async def get_stream_url_combined(url):
                     return result
             except Exception:
                 pass
-                
+
     return None
