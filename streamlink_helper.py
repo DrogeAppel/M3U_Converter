@@ -42,86 +42,99 @@ async def get_stream_url_playwright(url, wait_time=8):
             elif u not in captured_urls:
                 captured_urls.append(u)
 
+    p = None
     browser = None
     context = None
     page = None
 
     try:
-        async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=True)
-            context = await browser.new_context(
-                user_agent=USER_AGENTS[0],
-                viewport={"width": 1280, "height": 720},
-                locale="tr-TR",
-                timezone_id="Europe/Istanbul"
-            )
-            page = await context.new_page()
+        p = await async_playwright().start()
+        browser = await p.chromium.launch(headless=True)
+        context = await browser.new_context(
+            user_agent=USER_AGENTS[0],
+            viewport={"width": 1280, "height": 720},
+            locale="tr-TR",
+            timezone_id="Europe/Istanbul"
+        )
+        page = await context.new_page()
 
-            # Blokkeer afbeeldingen en andere onnodige bronnen om laden te versnellen
-            await page.route("**/*", handle_route)
+        # Blokkeer afbeeldingen en andere onnodige bronnen om laden te versnellen
+        await page.route("**/*", handle_route)
 
-            page.on("request", handle_request)
+        page.on("request", handle_request)
 
-            print(f"🌐 [Playwright] Loading {url}...")
+        print(f"🌐 [Playwright] Loading {url}...")
+        try:
+            # 'commit' is de allersnelste wacht-optie in Playwright (zodra de response ontvangen is)
+            await page.goto(url, wait_until="commit", timeout=30000)
+        except Exception as e:
+            print(f"⚠️ [Playwright] Goto warning for {url}: {e} (continuing anyway)")
+
+        # Wacht even voor de player om te initialiseren en requests te doen
+        start_time = asyncio.get_event_loop().time()
+        while asyncio.get_event_loop().time() - start_time < wait_time:
+            if captured_urls:
+                # Als we al een master playlist hebben, kunnen we direct stoppen
+                if any("master" in u.lower() for u in captured_urls):
+                    print(
+                        f"✅ [Playwright] Master stream found after {int(asyncio.get_event_loop().time() - start_time)}s")
+                    break
+                # Als we tenminste één m3u8 hebben en al 5 seconden hebben gewacht, is het waarschijnlijk de goede
+                if asyncio.get_event_loop().time() - start_time > 5:
+                    print(f"✅ [Playwright] Stream found after {int(asyncio.get_event_loop().time() - start_time)}s")
+                    break
+            await asyncio.sleep(1)
+
+        # Probeer op een play knop te klikken als we nog niks hebben
+        if not captured_urls:
             try:
-                # 'commit' is de allersnelste wacht-optie in Playwright (zodra de response ontvangen is)
-                await page.goto(url, wait_until="commit", timeout=30000)
-            except Exception as e:
-                print(f"⚠️ [Playwright] Goto warning for {url}: {e} (continuing anyway)")
-
-            # Wacht even voor de player om te initialiseren en requests te doen
-            start_time = asyncio.get_event_loop().time()
-            while asyncio.get_event_loop().time() - start_time < wait_time:
-                if captured_urls:
-                    # Als we al een master playlist hebben, kunnen we direct stoppen
-                    if any("master" in u.lower() for u in captured_urls):
-                        print(
-                            f"✅ [Playwright] Master stream found after {int(asyncio.get_event_loop().time() - start_time)}s")
-                        break
-                    # Als we tenminste één m3u8 hebben en al 5 seconden hebben gewacht, is het waarschijnlijk de goede
-                    if asyncio.get_event_loop().time() - start_time > 5:
-                        print(f"✅ [Playwright] Stream found after {int(asyncio.get_event_loop().time() - start_time)}s")
-                        break
-                await asyncio.sleep(1)
-
-            # Probeer op een play knop te klikken als we nog niks hebben
-            if not captured_urls:
-                try:
-                    play_buttons = await page.query_selector_all("button")
-                    for btn in play_buttons:
-                        if await btn.is_visible():
-                            await btn.click()
-                            await asyncio.sleep(2)
-                            if captured_urls: break
-                except:
-                    pass
-
-            # Proper cleanup sequence
-            if page:
-                page.remove_listener("request", handle_request)
-                try:
-                    await page.unroute("**/*")
-                except Exception:
-                    pass
-                try:
-                    await page.close()
-                except Exception:
-                    pass
-
-            if context:
-                try:
-                    await context.close()
-                except Exception:
-                    pass
-
-            if browser:
-                try:
-                    await browser.close()
-                except Exception:
-                    pass
+                play_buttons = await page.query_selector_all("button")
+                for btn in play_buttons:
+                    if await btn.is_visible():
+                        await btn.click()
+                        await asyncio.sleep(2)
+                        if captured_urls: break
+            except:
+                pass
 
     except Exception as e:
         print(f"❌ [Playwright] Error for {url}: {e}")
+    finally:
+        # Cleanup in the correct order with extra delay for pending tasks
+        if page:
+            try:
+                page.remove_listener("request", handle_request)
+            except:
+                pass
+            try:
+                await page.unroute("**/*")
+            except:
+                pass
+            try:
+                await page.close()
+            except:
+                pass
+
+        if context:
+            try:
+                await context.close()
+            except:
+                pass
+
+        if browser:
+            try:
+                await browser.close()
+            except:
+                pass
+
+        # Give pending tasks time to finish
+        await asyncio.sleep(0.1)
+
+        if p:
+            try:
+                await p.stop()
+            except:
+                pass
 
     if captured_urls:
         for u in captured_urls:
