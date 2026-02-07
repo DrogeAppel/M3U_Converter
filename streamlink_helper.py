@@ -14,12 +14,18 @@ USER_AGENTS = [
     "Mozilla/5.0 (iPhone; CPU iPhone OS 17_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Mobile/15E148 Safari/604.1"
 ]
 
-async def get_stream_url_playwright(url, wait_time=15):
+async def get_stream_url_playwright(url, wait_time=8):
     """
     Haalt de m3u8 URL op door de pagina te laden met Playwright en network requests te inspecteren.
     Handig voor zenders met complexe beveiliging zoals Star TV of ATV.
     """
     captured_urls = []
+
+    async def handle_route(route):
+        if route.request.resource_type in ["image", "media", "font", "stylesheet"]:
+            await route.abort()
+        else:
+            await route.continue_()
 
     async def handle_request(request):
         u = request.url
@@ -41,11 +47,17 @@ async def get_stream_url_playwright(url, wait_time=15):
                 timezone_id="Europe/Istanbul"
             )
             page = await context.new_page()
+            
+            # Blokkeer afbeeldingen en andere onnodige bronnen om laden te versnellen
+            # Ook ads en analytics blokkeren kan helpen
+            await page.route("**/*", handle_route)
+            
             page.on("request", handle_request)
             
             print(f"🌐 [Playwright] Loading {url}...")
             try:
-                await page.goto(url, wait_until="domcontentloaded", timeout=45000)
+                # 'commit' is de allersnelste wacht-optie in Playwright (zodra de response ontvangen is)
+                await page.goto(url, wait_until="commit", timeout=30000)
             except Exception as e:
                 print(f"⚠️ [Playwright] Goto warning for {url}: {e} (continuing anyway)")
 
@@ -53,8 +65,13 @@ async def get_stream_url_playwright(url, wait_time=15):
             start_time = asyncio.get_event_loop().time()
             while asyncio.get_event_loop().time() - start_time < wait_time:
                 if captured_urls:
+                    # Als we al een master playlist hebben, kunnen we direct stoppen
                     if any("master" in u.lower() for u in captured_urls):
                         print(f"✅ [Playwright] Master stream found after {int(asyncio.get_event_loop().time() - start_time)}s")
+                        break
+                    # Als we tenminste één m3u8 hebben en al 5 seconden hebben gewacht, is het waarschijnlijk de goede
+                    if asyncio.get_event_loop().time() - start_time > 5:
+                        print(f"✅ [Playwright] Stream found after {int(asyncio.get_event_loop().time() - start_time)}s")
                         break
                 await asyncio.sleep(1)
             
