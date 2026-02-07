@@ -36,7 +36,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          uv sync --system
+          uv sync
           if [ "${{ steps.playwright-cache.outputs.cache-hit }}" != "true" ]; then
             uv run playwright install --with-deps chromium
           else
@@ -44,7 +44,7 @@ jobs:
           fi
 
       - name: Run converter
-        run: python convert.py
+        run: uv run python convert.py
 
       - name: Commit and push
         run: |
