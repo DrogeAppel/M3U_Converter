@@ -1,5 +1,6 @@
 import requests
-from streamlink_helper import get_stream_url, get_stream_url_playwright
+import asyncio
+from streamlink_helper import get_stream_url_combined
 
 TR_JSON_URL = "https://raw.githubusercontent.com/famelack/famelack-channels/main/channels/raw/countries/tr.json"
 IPTV_ORG_CHANNELS_URL = "https://iptv-org.github.io/api/channels.json"
@@ -9,7 +10,24 @@ HEADERS = {
 }
 
 
-def json_to_m3u(output_file="tv_garden_tr.m3u"):
+async def process_live_channel(live, meta_map, name_map):
+    print(f"🔗 Fetching live stream for {live['name']}...")
+    s_url = await get_stream_url_combined(live['url'])
+
+    if s_url:
+        # Match metadata for logo
+        meta = meta_map.get(live['id'], {})
+        if not meta and live['name'].lower() in name_map:
+            meta = name_map[live['name'].lower()]
+        
+        logo = meta.get("logo", DEFAULT_LOGO)
+        group = "Turkey (Live)"
+        
+        info = f'#EXTINF:-1 tvg-id="{live["id"]}" tvg-logo="{logo}" group-title="{group}",{live["name"]}'
+        return (live['name'], s_url, info)
+    return None
+
+async def json_to_m3u(output_file="tv_garden_tr.m3u"):
     print("📥 Downloading Turkish channel list...")
     response = requests.get(TR_JSON_URL, headers=HEADERS)
 
@@ -24,8 +42,6 @@ def json_to_m3u(output_file="tv_garden_tr.m3u"):
     except Exception as e:
         print(f"❌ Error: Failed to decode JSON from {TR_JSON_URL}")
         print(f"   Exception: {e}")
-        print(f"   Response Preview (first 500 chars):")
-        print(response.text[:500])
         return
 
     print("📥 Downloading iptv-org metadata...")
@@ -61,27 +77,16 @@ def json_to_m3u(output_file="tv_garden_tr.m3u"):
         {"name": "NTV", "url": "https://www.ntv.com.tr/canli-yayin", "id": "NTV.tr"}
     ]
 
-    for live in live_channels:
-        print(f"🔗 Fetching live stream for {live['name']}...")
-        s_url = get_stream_url(live['url'])
-        
-        # Fallback to Playwright if Streamlink fails
-        if not s_url:
-            print(f"🔄 Streamlink failed for {live['name']}, trying Playwright...")
-            s_url = get_stream_url_playwright(live['url'])
+    # Process live channels concurrently
+    tasks = [process_live_channel(live, meta_map, name_map) for live in live_channels]
+    results = await asyncio.gather(*tasks)
 
-        if s_url:
-            # Match metadata for logo
-            meta = meta_map.get(live['id'], {})
-            if not meta and live['name'].lower() in name_map:
-                meta = name_map[live['name'].lower()]
-            
-            logo = meta.get("logo", DEFAULT_LOGO)
-            group = "Turkey (Live)"
-            
-            m3u_lines.append(f'#EXTINF:-1 tvg-id="{live["id"]}" tvg-logo="{logo}" group-title="{group}",{live["name"]}')
+    for result in results:
+        if result:
+            name, s_url, info = result
+            m3u_lines.append(info)
             m3u_lines.append(s_url)
-            seen[f"{live['name']}_{s_url}"] = True
+            seen[f"{name}_{s_url}"] = True
 
     for channel in tr_channels:
         name = channel.get("name", "Unknown")
@@ -126,4 +131,4 @@ def json_to_m3u(output_file="tv_garden_tr.m3u"):
     print(f"📊 Total channels: {len(seen)}")
 
 if __name__ == "__main__":
-    json_to_m3u()
+    asyncio.run(json_to_m3u())
