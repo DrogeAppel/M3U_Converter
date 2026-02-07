@@ -1,0 +1,11 @@
+[project]
+name = "m3u-converter"
+version = "0.1.0"
+description = "M3U Converter for Turkish channels"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "playwright>=1.50.0",
+    "requests>=2.32.3",
+    "streamlink>=8.1.0",
+]

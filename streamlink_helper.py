@@ -22,10 +22,14 @@ async def get_stream_url_playwright(url, wait_time=8):
     captured_urls = []
 
     async def handle_route(route):
-        if route.request.resource_type in ["image", "media", "font", "stylesheet"]:
-            await route.abort()
-        else:
-            await route.continue_()
+        try:
+            if route.request.resource_type in ["image", "media", "font", "stylesheet"]:
+                await route.abort()
+            else:
+                await route.continue_()
+        except Exception:
+            # Ignore errors like "Target closed" when the page is closing
+            pass
 
     async def handle_request(request):
         u = request.url
@@ -158,20 +162,33 @@ async def get_stream_url_combined(url):
     
     done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
     
+    # Check the result of the completed task(s)
+    success_result = None
     for task in done:
-        result = task.result()
-        if result:
-            # Cancel the other task if one succeeded
-            for p in pending:
-                p.cancel()
-            return result
+        try:
+            result = task.result()
+            if result:
+                success_result = result
+                break
+        except Exception as e:
+            print(f"⚠️ Task failed: {e}")
+
+    if success_result:
+        # Cancel the other tasks if one succeeded
+        for p in pending:
+            p.cancel()
+        # We can wait briefly for cancellation to take effect or just return
+        return success_result
             
     # If the first one finished but returned None, wait for the others
     if pending:
         done2, pending2 = await asyncio.wait(pending, return_when=asyncio.ALL_COMPLETED)
         for task in done2:
-            result = task.result()
-            if result:
-                return result
+            try:
+                result = task.result()
+                if result:
+                    return result
+            except Exception:
+                pass
                 
     return None
