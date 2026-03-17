@@ -1,14 +1,14 @@
 #EXTM3U
 #EXTINF:-1 tvg-id="TV8.tr" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey (Live)",TV8
-https://tv8.daioncdn.net/tv8/tv8_1080p.m3u8?&sid=891d8jzdasdq&app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3
+https://tv8.daioncdn.net/tv8/tv8_1080p.m3u8?&sid=891ymk63qy2c&app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3
 #EXTINF:-1 tvg-id="ShowTV.tr" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey (Live)",Show TV
-https://ciner.daioncdn.net/showtv/showtv_1080p.m3u8?ex=1664766175&st=RBzhSuGauna0OGld-DJUVA&tv=1&sid=891d8jqz59u3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&ce=3
+https://ciner.daioncdn.net/showtv/showtv_1080p.m3u8?ex=1664766175&st=RBzhSuGauna0OGld-DJUVA&tv=1&sid=891ymkv5p6au&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&ce=3
 #EXTINF:-1 tvg-id="ATV.tr" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey (Live)",ATV
-https://trkvz-live.ercdn.net/atvhd/atvhd_1080p.m3u8?st=VDOVIX6sKi-xSAh2UpRrlg&e=1773736859
+https://trkvz-live.ercdn.net/atvhd/atvhd_1080p.m3u8?st=zqEjjUmD9uuRMT6Uh_Ey_g&e=1773751246
 #EXTINF:-1 tvg-id="KanalD.tr" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey (Live)",Kanal D
-https://demiroren.daioncdn.net/kanald/kanald_1080p.m3u8?&sid=891d8jxzxxui&app=da2109ea-5dfe-4107-89ab-23593336ed61&ce=3
+https://demiroren.daioncdn.net/kanald/kanald_1080p.m3u8?&sid=891ymk6zdeln&app=da2109ea-5dfe-4107-89ab-23593336ed61&ce=3
 #EXTINF:-1 tvg-id="FoxTurkey.tr" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey (Live)",NOW
-https://nowtv-live-ad.ercdn.net/nowtv/nowtv_720p.m3u8?e=1773748981&st=XAFy5bppybZafJdVf4UFeg
+https://nowtv-live-ad.ercdn.net/nowtv/playlist.m3u8?st=jSkQO7u8Rfum3122Fn3edw&e=1773720395
 #EXTINF:-1 tvg-id="TRT1.tr" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey (Live)",TRT 1
 https://trt.daioncdn.net/trt-1/master.m3u8?app=web
 #EXTINF:-1 tvg-id="TRTHaber.tr" tvg-logo="https://i.imgur.com/3pODQO3.png" group-title="Turkey (Live)",TRT Haber
